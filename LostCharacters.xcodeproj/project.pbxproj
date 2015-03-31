@@ -15,6 +15,10 @@
 		C73F7C941ACB1D600083CBB4 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C73F7C931ACB1D600083CBB4 /* Images.xcassets */; };
 		C73F7C971ACB1D600083CBB4 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C73F7C951ACB1D600083CBB4 /* LaunchScreen.xib */; };
 		C73F7CA31ACB1D600083CBB4 /* LostCharactersTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F7CA21ACB1D600083CBB4 /* LostCharactersTests.m */; };
+		C73F7CAF1ACB1F8A0083CBB4 /* lost.plist in Resources */ = {isa = PBXBuildFile; fileRef = C73F7CAE1ACB1F8A0083CBB4 /* lost.plist */; };
+		C73F7CB21ACB20C10083CBB4 /* Character.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F7CB11ACB20C10083CBB4 /* Character.m */; };
+		C73F7CB51ACB2C170083CBB4 /* CharacterTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F7CB41ACB2C170083CBB4 /* CharacterTableViewCell.m */; };
+		C73F7CB81ACB3C540083CBB4 /* NewCharacterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C73F7CB71ACB3C540083CBB4 /* NewCharacterViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,13 @@
 		C73F7C9C1ACB1D600083CBB4 /* LostCharactersTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LostCharactersTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C73F7CA11ACB1D600083CBB4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C73F7CA21ACB1D600083CBB4 /* LostCharactersTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LostCharactersTests.m; sourceTree = "<group>"; };
+		C73F7CAE1ACB1F8A0083CBB4 /* lost.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = lost.plist; sourceTree = "<group>"; };
+		C73F7CB01ACB20C10083CBB4 /* Character.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Character.h; path = ../Character.h; sourceTree = "<group>"; };
+		C73F7CB11ACB20C10083CBB4 /* Character.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Character.m; path = ../Character.m; sourceTree = "<group>"; };
+		C73F7CB31ACB2C170083CBB4 /* CharacterTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CharacterTableViewCell.h; path = ../CharacterTableViewCell.h; sourceTree = "<group>"; };
+		C73F7CB41ACB2C170083CBB4 /* CharacterTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CharacterTableViewCell.m; path = ../CharacterTableViewCell.m; sourceTree = "<group>"; };
+		C73F7CB61ACB3C540083CBB4 /* NewCharacterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NewCharacterViewController.h; path = ../NewCharacterViewController.h; sourceTree = "<group>"; };
+		C73F7CB71ACB3C540083CBB4 /* NewCharacterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NewCharacterViewController.m; path = ../NewCharacterViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,8 +96,14 @@
 			children = (
 				C73F7C871ACB1D600083CBB4 /* AppDelegate.h */,
 				C73F7C881ACB1D600083CBB4 /* AppDelegate.m */,
+				C73F7CB01ACB20C10083CBB4 /* Character.h */,
+				C73F7CB11ACB20C10083CBB4 /* Character.m */,
 				C73F7C8D1ACB1D600083CBB4 /* ViewController.h */,
 				C73F7C8E1ACB1D600083CBB4 /* ViewController.m */,
+				C73F7CB61ACB3C540083CBB4 /* NewCharacterViewController.h */,
+				C73F7CB71ACB3C540083CBB4 /* NewCharacterViewController.m */,
+				C73F7CB31ACB2C170083CBB4 /* CharacterTableViewCell.h */,
+				C73F7CB41ACB2C170083CBB4 /* CharacterTableViewCell.m */,
 				C73F7C901ACB1D600083CBB4 /* Main.storyboard */,
 				C73F7C931ACB1D600083CBB4 /* Images.xcassets */,
 				C73F7C951ACB1D600083CBB4 /* LaunchScreen.xib */,
@@ -99,6 +116,7 @@
 		C73F7C831ACB1D600083CBB4 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				C73F7CAE1ACB1F8A0083CBB4 /* lost.plist */,
 				C73F7C841ACB1D600083CBB4 /* Info.plist */,
 				C73F7C851ACB1D600083CBB4 /* main.m */,
 			);
@@ -204,6 +222,7 @@
 			files = (
 				C73F7C921ACB1D600083CBB4 /* Main.storyboard in Resources */,
 				C73F7C971ACB1D600083CBB4 /* LaunchScreen.xib in Resources */,
+				C73F7CAF1ACB1F8A0083CBB4 /* lost.plist in Resources */,
 				C73F7C941ACB1D600083CBB4 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -223,6 +242,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C73F7C8C1ACB1D600083CBB4 /* LostCharacters.xcdatamodeld in Sources */,
+				C73F7CB81ACB3C540083CBB4 /* NewCharacterViewController.m in Sources */,
+				C73F7CB51ACB2C170083CBB4 /* CharacterTableViewCell.m in Sources */,
+				C73F7CB21ACB20C10083CBB4 /* Character.m in Sources */,
 				C73F7C891ACB1D600083CBB4 /* AppDelegate.m in Sources */,
 				C73F7C8F1ACB1D600083CBB4 /* ViewController.m in Sources */,
 				C73F7C861ACB1D600083CBB4 /* main.m in Sources */,
