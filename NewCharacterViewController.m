@@ -7,10 +7,19 @@
 //
 
 #import "NewCharacterViewController.h"
+#import "Character.h"
 
-@interface NewCharacterViewController () <UINavigationControllerDelegate,UIImagePickerControllerDelegate>
+@interface NewCharacterViewController ()
+
+<
+UINavigationControllerDelegate,
+UIImagePickerControllerDelegate
+>
+
 @property (weak, nonatomic) IBOutlet UIImageView *characterImageView;
 @property (weak, nonatomic) IBOutlet UITextField *nameTextField;
+@property (weak, nonatomic) IBOutlet UITextField *passengerNameTextField;
+@property Character *character;
 
 @end
 
@@ -21,13 +30,10 @@
     self.characterImageView.layer.masksToBounds = YES;
     self.characterImageView.layer.cornerRadius = 90;
 
-
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
+
+
 
 - (IBAction)onAddProfilePicTapped:(id)sender {
     UIImagePickerController *imagePicker = [[UIImagePickerController alloc] init];

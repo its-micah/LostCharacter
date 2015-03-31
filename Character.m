@@ -11,12 +11,14 @@
 @implementation Character
 
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary {
+-(instancetype)initWithPassengerName: (NSString *)passenger withActorName:(NSString *)name withSeatNumber:(NSString *)seatNumber withGender:(BOOL)isMale {
+
     self = [super init];
 
-    self.name = dictionary[@"name"];
-    self.passenger = dictionary[@"passenger"];
-    //self.gender = di
+    self.name = name;
+    self.passenger = passenger;
+    self.seatNumber = seatNumber;
+    self.gender = &(isMale);
 
     return self;
 }

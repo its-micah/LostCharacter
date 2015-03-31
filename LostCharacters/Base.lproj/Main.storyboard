@@ -286,6 +286,7 @@
                     <connections>
                         <outlet property="characterImageView" destination="vsU-Ne-hkY" id="udr-Jv-QqN"/>
                         <outlet property="nameTextField" destination="qcQ-qb-n19" id="2O0-h7-WBE"/>
+                        <outlet property="passengerNameTextField" destination="gT2-4r-avt" id="waB-5p-2XE"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yt6-QR-oeC" userLabel="First Responder" sceneMemberID="firstResponder"/>

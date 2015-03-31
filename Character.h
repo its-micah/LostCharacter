@@ -11,10 +11,12 @@
 @interface Character : NSObject
 
 @property NSString *name;
-@property NSString *occupation;
 @property NSString *passenger;
+@property BOOL *gender;
+@property NSString *seatNumber;
 
-- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+
+-(instancetype)initWithPassengerName: (NSString *)passenger withActorName:(NSString *)name withSeatNumber:(NSString *)seatNumber withGender:(BOOL)isMale;
 
 
 @end
