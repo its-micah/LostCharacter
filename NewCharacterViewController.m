@@ -8,6 +8,7 @@
 
 #import "NewCharacterViewController.h"
 #import "Character.h"
+#import "AppDelegate.h"
 
 @interface NewCharacterViewController ()
 
@@ -17,7 +18,6 @@ UIImagePickerControllerDelegate
 >
 
 @property (weak, nonatomic) IBOutlet UIImageView *characterImageView;
-@property (weak, nonatomic) IBOutlet UITextField *nameTextField;
 @property (weak, nonatomic) IBOutlet UITextField *passengerNameTextField;
 @property Character *character;
 
@@ -32,7 +32,14 @@ UIImagePickerControllerDelegate
 
 }
 
+- (IBAction)addNewCharacter:(UITextField *)sender {
+    NSManagedObject *character = [NSEntityDescription insertNewObjectForEntityForName:@"Character" inManagedObjectContext:self.moc];
+    [character setValue:sender.text forKey:@"passenger"];
+    [self.moc save:nil];
+    sender.text = @"";
+    [sender resignFirstResponder];
 
+}
 
 
 - (IBAction)onAddProfilePicTapped:(id)sender {

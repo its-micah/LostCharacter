@@ -10,10 +10,12 @@
 #import "AppDelegate.h"
 #import "Character.h"
 #import "CharacterTableViewCell.h"
+#import "NewCharacterViewController.h"
 
 @interface ViewController () <UITableViewDataSource, UITableViewDelegate>
 @property NSManagedObjectContext *moc;
 @property NSArray *characterArray;
+@property NSManagedObject *character;
 @property (weak, nonatomic) IBOutlet UITableView *characterTableView;
 @end
 
@@ -30,7 +32,6 @@
     self.moc = appDelegate.managedObjectContext;
 
     [self load];
-    //[self load];
 }
 
 
@@ -44,6 +45,9 @@
     }
 }
 
+- (void)viewWillAppear:(BOOL)animated {
+    [self.characterTableView reloadData];
+}
 
 
 - (void)prePopulateTableView {
@@ -56,11 +60,17 @@
         [character setValue:dict[@"actor"] forKey:@"actor"];
         [character setValue:dict[@"passenger"] forKey:@"passenger"];
         [self.moc save:nil];
-       // [self.characterArray addObject:character];
-        //NSLog(@"%@", [character valueForKey:@"actor"]);
     }
 }
 
+- (void)setCharacterTableView:(UITableView *)characterTableView {
+    _characterTableView = characterTableView;
+    [self.characterTableView reloadData];
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
+}
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.characterArray.count;
@@ -74,6 +84,32 @@
     cell.textLabel.text = [character valueForKey:@"passenger"];
     cell.detailTextLabel.text = [character valueForKey:@"actor"];
     return cell;
+}
+
+-(NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return @"Smoke Monster";
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.characterArray];
+        [tempArray removeObjectAtIndex:indexPath.row];
+        self.characterArray = tempArray;
+        [self.characterTableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationLeft];
+        NSManagedObject *character = [self.characterArray objectAtIndex:indexPath.row];
+        [self.moc deleteObject:character];
+        [self.characterTableView reloadData];
+        [self.moc save:nil];
+    }
+}
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showCharacterDetailView"]) {
+        NewCharacterViewController *newVC = segue.destinationViewController;
+        newVC.moc = self.moc;
+    }
 }
 
 @end

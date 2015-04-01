@@ -123,7 +123,7 @@
                         <nil key="title"/>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="GZy-P5-nsp">
                             <connections>
-                                <segue destination="wuc-vL-p9E" kind="show" id="EQX-0X-vle"/>
+                                <segue destination="wuc-vL-p9E" kind="show" identifier="showCharacterDetailView" id="EQX-0X-vle"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -185,6 +185,9 @@
                                         <include reference="Raz-qd-1q3"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <action selector="addNewCharacter:" destination="wuc-vL-p9E" eventType="editingDidEnd" id="KAZ-K5-iOb"/>
+                                </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRH-2O-Gga">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -285,7 +288,6 @@
                     </view>
                     <connections>
                         <outlet property="characterImageView" destination="vsU-Ne-hkY" id="udr-Jv-QqN"/>
-                        <outlet property="nameTextField" destination="qcQ-qb-n19" id="2O0-h7-WBE"/>
                         <outlet property="passengerNameTextField" destination="gT2-4r-avt" id="waB-5p-2XE"/>
                     </connections>
                 </viewController>
